@@ -25,10 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={jost.variable}>
-        <main className="flex-[1,1,auto] max-w-screen-xl mx-auto px-5 sm:px-10 lg:px-20">
-        <Header/>
+        <main className="flex-[1,1,auto]">
           {children}
-          <Footer />
         </main>
         </body>
     </html>

@@ -18,6 +18,12 @@ const config = {
       },
     },
     extend: {
+      backgroundImage:{
+        "hero": "url('/assets/admin ui/hero/hero-1.png')",
+      },
+      backgroundPosition: {
+        "revert": "revert",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
