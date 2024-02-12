@@ -1,12 +1,27 @@
 export const footer = {
     name: 'footer', 
-    title: 'Footer',  
+    title: 'Header & Footer',  
     type: 'document',
     fields: [
         {
             name:'title',
             title: 'Title',
             type: 'string',
+        },
+        {
+            name: "headerimage",
+            title: "Header Image",
+            type: "image",
+        },
+        {
+            name: 'headerTitle',
+            title: 'Header Title',
+            type: 'string',
+        },
+        {
+            name: "headerDescription",
+            title: "Header Description",
+            type: "string",
         },
         {
             name: 'inclusions',

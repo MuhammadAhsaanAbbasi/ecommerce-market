@@ -1,6 +1,9 @@
 interface IFooter {
     inclusions: IInclusion[];
     navItems: INavItem[];
+    headerDescription: string;
+    headerTitle: string;
+    HeroImage: string;
     footerLine: string;
     _id: string;    
 }
