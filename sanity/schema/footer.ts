@@ -4,6 +4,11 @@ export const footer = {
     type: 'document',
     fields: [
         {
+            name:'title',
+            title: 'Title',
+            type: 'string',
+        },
+        {
             name: 'inclusions',
             title: 'Inclusions',
             type: 'array',
@@ -22,13 +27,18 @@ export const footer = {
                             type: 'string',
                         },
                         {
-                            name: 'icon',
+                            name: 'inclusionicon',
                             title: 'Icon',
                             type: 'image',
                         },
                     ],
                 },
             ],
+        },
+        {
+            name:"footerLine",
+            title:"Footer Line",
+            type:"string",
         },
         {
             name: 'navItems',
@@ -51,10 +61,10 @@ export const footer = {
                                 {
                                     name: 'url',
                                     title: 'Url',
-                                    type: 'string',
+                                    type: 'url',
                                 },
                                 {
-                                    name: 'icon',
+                                    name: 'navicon',
                                     title: 'Icon',
                                     type: 'image',
                                 },
