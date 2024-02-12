@@ -22,4 +22,10 @@ interface INavItem {
     _key: string;
 }
 
+interface ICategory {   
+    name: string;
+    CategoryImage: string;
+    _id: string;
+}
+
 
