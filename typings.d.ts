@@ -28,4 +28,11 @@ interface ICategory {
     _id: string;
 }
 
+interface IPromotion {
+    title: string;
+    description: string;
+    expiryDate: number;
+    PromotionImage: string[];
+    _id: string;
+}
 
