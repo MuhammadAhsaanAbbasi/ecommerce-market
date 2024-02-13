@@ -1,5 +1,6 @@
 "use client"
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { client } from '../../../sanity/lib/client';
 
 export const INITIAL_FILTER_DATA = {
     categoryFilter : [],
@@ -15,6 +16,7 @@ export const FilterContext = createContext<IContextType>(INITIAL_FILTER_DATA)
 
 export const FilterProvider = ({children}:{children:React.ReactNode}) => {
     const [categoryFilter, setCategoryFilter] = useState<string[]>([])
+    // console.log(categoryFilter)
     return (
         <FilterContext.Provider value={{categoryFilter, setCategoryFilter}}>
             {children}

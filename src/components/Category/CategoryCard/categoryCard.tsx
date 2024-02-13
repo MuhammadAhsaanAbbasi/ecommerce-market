@@ -5,7 +5,6 @@ import React from 'react'
 
 const CategoryCard = ({category}:{category:ICategory}) => {
     const {setCategoryFilter} = useFilter()
-    // console.log(category._id)
     return (
         <Link
         className='relative bg-gray-50 min-h-[360px] w-full flex items-end justify-center p-5 cursor-pointer rounded-lg bg-cover bg-center bg-no-repeat'
