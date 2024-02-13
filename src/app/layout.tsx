@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header/header";
 import { Jost } from 'next/font/google'
 import Footer from "@/components/Footer/footer";
+import { FilterProvider } from "@/components/Filter/filter";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,7 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={jost.variable}>
         <main className="flex-[1,1,auto]">
+          <FilterProvider>
           {children}
+          </FilterProvider>
         </main>
         </body>
     </html>
