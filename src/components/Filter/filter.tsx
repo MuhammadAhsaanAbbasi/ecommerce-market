@@ -1,6 +1,5 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from 'react';
-import { client } from '../../../sanity/lib/client';
 
 export const INITIAL_FILTER_DATA = {
     categoryFilter : [],

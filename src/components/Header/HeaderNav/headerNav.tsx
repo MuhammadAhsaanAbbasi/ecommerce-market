@@ -14,9 +14,16 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import DropDown from "./dropDown";
+import { cn } from "@/lib/utils";
+import NavCategory from "./navCategory";
+import { client } from "../../../../sanity/lib/client";
 
-
-export function HeaderNav() {
+export async function HeaderNav() {
+    const data:ICategory[] = await client.fetch(`*[_type == "category" ]{
+        _id,
+        name,
+        "CategoryImage" : categoryImage.asset->url,
+    }`)
     return (
         <>
             <section className="hidden sm:flex">
@@ -36,16 +43,10 @@ export function HeaderNav() {
                                 <ShoppingBag size={23} />
                             </NavigationMenuTrigger>
                             <NavigationMenuContent>
-                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                    {/* {components.map((component) => (
-                                        <ListItem
-                                            key={component.title}
-                                            title={component.title}
-                                            href={component.href}
-                                        >
-                                            {component.description}
-                                        </ListItem>
-                                    ))} */}
+                                <ul className="flex flex-col w-full gap-3 p-4 px-14">
+                                    {data.map((component) => (
+                                        <NavCategory key={component._id} category={component}/>
+                                    ))}
                                 </ul>
                             </NavigationMenuContent>
                         </NavigationMenuItem>
@@ -73,5 +74,3 @@ export function HeaderNav() {
         </>
     )
 }
-
-

@@ -4,12 +4,11 @@ import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Menu,ShoppingBag, ShoppingCart, UserRound } from "lucide-react"
 import { LuHome } from "react-icons/lu";
+
 const DropDown = () => {
     return (
         <DropdownMenu>
@@ -45,3 +44,5 @@ const DropDown = () => {
 }
 
 export default DropDown
+
+
