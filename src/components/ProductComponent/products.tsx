@@ -25,10 +25,7 @@ const Products = () => {
         }
         fetchProducts()
     }, [categories])
-    console.log(categoryFilter)
     return (
-        <section className="grid sm:grid-cols-[1fr,75%] sm:gap-16 gap-12 grid-cols-1">
-            <Filter />
             <section className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-5'>
                 {products.map((product) => (
                     <Link
@@ -57,7 +54,6 @@ const Products = () => {
                     </Link>
                 ))}
             </section>
-        </section>
     )
 }
 

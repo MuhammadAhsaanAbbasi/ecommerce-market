@@ -15,7 +15,6 @@ export const FilterContext = createContext<IContextType>(INITIAL_FILTER_DATA)
 
 export const FilterProvider = ({children}:{children:React.ReactNode}) => {
     const [categoryFilter, setCategoryFilter] = useState<string[]>([])
-    // console.log(categoryFilter)
     return (
         <FilterContext.Provider value={{categoryFilter, setCategoryFilter}}>
             {children}

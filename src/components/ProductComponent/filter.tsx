@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+"use client"
+import { useEffect, useState } from 'react'
 import { getCategory } from '../GetData/getCategory'
 import { useFilter } from '../Filter/filter'
 import { Checkbox } from './checkBox'
 
 const Filter = () => {
     const [data, setData] = useState<ICategory[]>([])
+    
     useEffect(()=>{
         const fetchData = async () => {
             const fdata = await getCategory()
