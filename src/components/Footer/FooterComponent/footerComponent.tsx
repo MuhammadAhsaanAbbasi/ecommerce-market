@@ -13,6 +13,7 @@ const FooterComponent = async () => {
         },
         _id,
         footerLine,
+        "FooterImage" : footerimage.asset->url,
             navItems[]{
         "NavItemLabel": link.label,
         "NavItemUrl": link.url,
@@ -49,7 +50,7 @@ const FooterComponent = async () => {
                         >
                             <Link href="/">
                                 <Image
-                                    src="./assets/logo-white.svg"
+                                    src={inclusion.FooterImage}
                                     alt="logo"
                                     width={170}
                                     height={50}

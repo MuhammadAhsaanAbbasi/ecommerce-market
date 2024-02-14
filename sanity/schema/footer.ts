@@ -51,6 +51,11 @@ export const footer = {
             ],
         },
         {
+            name: "footerimage",
+            title: "Footer Image",
+            type: "image",
+        },
+        {
             name:"footerLine",
             title:"Footer Line",
             type:"string",

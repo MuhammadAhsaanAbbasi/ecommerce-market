@@ -1,3 +1,4 @@
+import ProductDetail from '@/components/ProductDetails/productDetail'
 import React from 'react'
 
 interface IParmas {
@@ -6,11 +7,13 @@ interface IParmas {
     }
 }
 
-
 const ProductDetailsPage = ({params:{slug}}:IParmas) => {
     return (
-        <div>ProductDetailsPage {slug} </div>
+        <>
+        <ProductDetail slug={slug}/>
+        </>
     )
 }
 
 export default ProductDetailsPage
+

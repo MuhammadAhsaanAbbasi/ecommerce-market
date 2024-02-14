@@ -6,6 +6,7 @@ interface IFooter {
     HeroImage: string;
     footerLine: string;
     _id: string;    
+    FooterImage: string;
 }
 
 interface IInclusion {
