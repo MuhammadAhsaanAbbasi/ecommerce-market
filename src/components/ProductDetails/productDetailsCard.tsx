@@ -4,7 +4,7 @@ import React from 'react'
 const ProductDetailsCard = ({ product }: { product: IProduct }) => {
     return (
         <section className={"grid grid-cols-1 md:grid-cols-2 gap-8 w-full"}>
-            <div className={"relative sm:min-h-[400px] bg-gray-50 min-h-52"}>
+            <div className={"relative sm:min-h-[400px] bg-gray-50 min-h-52 justify-center items-center"}>
                 {!product.MainImage && <div className={"w-full h-full flex items-center justify-center bg-[rgb(#f0f0f0)]"}>No image</div>}
                 {product.MainImage &&
                     <Image
@@ -12,7 +12,7 @@ const ProductDetailsCard = ({ product }: { product: IProduct }) => {
                         alt={product.name}
                         width={500}
                         height={500}
-                        className={"p-6 aspect-[1/1] max-w-full"}
+                        className={"p-6 object-contain aspect-[1/1] max-w-full"}
                     />}
             </div>
             <div className={"flex flex-col mt-2"}>

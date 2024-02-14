@@ -43,7 +43,7 @@ interface IProduct {
     Slug: string;
     MainImage: string;
     description: string;
-    category: string;
+    CategoryId: string;
     price: number;
     _id: string;
 }
