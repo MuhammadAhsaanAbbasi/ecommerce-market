@@ -14,7 +14,6 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import DropDown from "./dropDown";
-import { cn } from "@/lib/utils";
 import NavCategory from "./navCategory";
 import { client } from "../../../../sanity/lib/client";
 

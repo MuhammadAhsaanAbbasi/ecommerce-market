@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext,  useState } from 'react';
 
 export const INITIAL_FILTER_DATA = {
     categoryFilter : [],

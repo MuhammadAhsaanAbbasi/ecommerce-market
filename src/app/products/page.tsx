@@ -1,5 +1,6 @@
+import ProductComponent from '@/components/ProductComponent/productComponent'
 import React from 'react'
-import ProductComponent from './ProductComponent/productComponent'
+
 
 const ProductPage = () => {
     return (
