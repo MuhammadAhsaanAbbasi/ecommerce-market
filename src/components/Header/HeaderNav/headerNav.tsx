@@ -13,10 +13,9 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import DropDown from "./dropDown";
-import NavCategory from "./navCategory";
-import { client } from "../../../../sanity/lib/client";
 import { useState,useEffect } from "react";
 import { getCategory } from "@/components/GetData/getCategory";
+import { useFilter } from "@/components/Filter/filter";
 
 export function HeaderNav() {
     const [data, setData] = useState<ICategory[]>([])
@@ -27,6 +26,7 @@ export function HeaderNav() {
         }
         fetchData()
     },[ data])
+    const {setCategoryFilter} = useFilter()
     return (
         <>
             <section className="hidden sm:flex">
@@ -48,7 +48,18 @@ export function HeaderNav() {
                             <NavigationMenuContent>
                                 <ul className="flex flex-col w-full gap-3 p-4 px-14">
                                     {data.map((component) => (
-                                        <NavCategory key={component._id} category={component}/>
+                                        <li
+                                        key={component._id}
+                                        className="flex flex-col space-y-1 rounded-md p-4 text-xl font-medium leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                        <Link
+                                        href={`/products`}
+                                        onClick={() => 
+                                            setCategoryFilter([component._id])
+                                        }
+                                        >
+                                            {component.name}
+                                        </Link>
+                                    </li>
                                     ))}
                                 </ul>
                             </NavigationMenuContent>
