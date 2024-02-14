@@ -1,8 +1,7 @@
 "use client"
-
 import * as React from "react"
 import Link from "next/link"
-import { ShoppingBag, ShoppingCart, UserRound, Menu } from "lucide-react"
+import { ShoppingBag, ShoppingCart, UserRound } from "lucide-react"
 import { LuHome } from "react-icons/lu";
 import {
     NavigationMenu,
@@ -16,13 +15,18 @@ import {
 import DropDown from "./dropDown";
 import NavCategory from "./navCategory";
 import { client } from "../../../../sanity/lib/client";
+import { useState,useEffect } from "react";
+import { getCategory } from "@/components/GetData/getCategory";
 
-export async function HeaderNav() {
-    const data:ICategory[] = await client.fetch(`*[_type == "category" ]{
-        _id,
-        name,
-        "CategoryImage" : categoryImage.asset->url,
-    }`)
+export function HeaderNav() {
+    const [data, setData] = useState<ICategory[]>([])
+    useEffect(()=>{
+        const fetchData = async () => {
+            const fdata = await getCategory()
+            setData(fdata)
+        }
+        fetchData()
+    },[ data])
     return (
         <>
             <section className="hidden sm:flex">

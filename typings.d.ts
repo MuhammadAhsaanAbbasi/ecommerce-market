@@ -36,3 +36,13 @@ interface IPromotion {
     _id: string;
 }
 
+interface IProduct {
+    name: string;
+    _id: string;
+    Slug: string;
+    MainImage: string;
+    description: string;
+    category: string;
+    price: number;
+    _id: string;
+}

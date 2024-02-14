@@ -1,17 +1,14 @@
-"use client"
-import { useFilter } from '@/components/Filter/filter'
 import Wrapper from '@/components/Wrapper/wrapper'
 import React from 'react'
+import Products from './products'
+import CheckBox from './filter'
 
-const ProductComponent = () => {
-    const { categoryFilter } = useFilter()
+const ProductComponents = () => {
     return (
-        <>
-            <Wrapper>
-                <div>ProductPage {categoryFilter.map(item => item)}</div>
-            </Wrapper>
-        </>
+        <Wrapper>
+            <Products />
+        </Wrapper>
     )
 }
 
-export default ProductComponent
+export default ProductComponents

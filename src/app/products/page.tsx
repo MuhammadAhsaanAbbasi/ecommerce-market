@@ -1,11 +1,11 @@
-import ProductComponent from '@/components/ProductComponent/productComponent'
+import ProductComponents from '@/components/ProductComponent/productComponent'
 import React from 'react'
 
 
 const ProductPage = () => {
     return (
         <>
-        <ProductComponent/>
+        <ProductComponents/>
         </>
     )
 }

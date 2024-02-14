@@ -1,13 +1,10 @@
 import { client } from '../../../sanity/lib/client'
 import Link from 'next/link'
 import CategoryCard from './CategoryCard/categoryCard'
+import { getCategory } from '../GetData/getCategory'
 
 const Categories = async () => {
-    const data:ICategory[] = await client.fetch(`*[_type == "category" ]{
-        _id,
-        name,
-        "CategoryImage" : categoryImage.asset->url,
-    }`)
+    const data:ICategory[] = await getCategory()
     return (
         <section className="flex flex-col gap-10 my-5">
             <div className="flex justify-between items-center">

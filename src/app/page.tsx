@@ -11,9 +11,6 @@ export default function Home() {
     <Hero />
     <Categories/>
     <Promotion/>
-      <div className="bg-red-500">
-        <h1>E-Commerce Store</h1>
-      </div>
     </Wrapper>
     </>
   );
