@@ -30,7 +30,7 @@ const RegisterForm = () => {
         setError("")
         setSuccess("")
         try {
-            const data = await fetch("api/auth/register", {
+            const data = await fetch("/api/auth/sign-up", {
                 method: "POST",
                 body: JSON.stringify({
                     name: values.name,

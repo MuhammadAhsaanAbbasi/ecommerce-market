@@ -1,4 +1,4 @@
-import { db, users } from "@/app/api/auth/schema";
+import { db, users } from "@/lib/drizzle";
 
 export const getUserByEmail = async (email: string) => {
     try {

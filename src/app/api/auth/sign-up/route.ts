@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { RegisterSchema } from "../../../../../schemas";
-import { db, users } from "../schema";
+import { db, users } from "@/lib/drizzle";
 import bcrypt from "bcryptjs"
 import { getUserByEmail } from "@/data/user";
 
