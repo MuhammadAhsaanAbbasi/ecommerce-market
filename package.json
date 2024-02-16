@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^0.7.0",
+    "@drizzle/store": "^1.5.3",
     "@hookform/resolvers": "^3.3.4",
     "@neondatabase/serverless": "^0.8.1",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
