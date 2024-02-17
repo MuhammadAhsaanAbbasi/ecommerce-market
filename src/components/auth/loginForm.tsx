@@ -11,6 +11,7 @@ import { Button } from '../ui/button'
 import { FormError } from '../form-error'
 import { Login } from '../../../actions/login'
 import { FormSuccess } from '../form.success'
+import { useRouter } from 'next/navigation'
 
 const LoginForm = () => {
     const [Error, setError] = useState<string | undefined>("")
@@ -23,14 +24,39 @@ const LoginForm = () => {
             password:""
         }
     })
-    const onSubmit=(values: z.infer<typeof LoginSchema>) => {
-        startTransition(()=>{
-            Login(values)
-            .then((data)=>{
-                setError(data.error)
-                setSuccess(data.success)
+    const router = useRouter()
+    const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
+        setError("")
+        setSuccess("")
+        try {
+            const data = await fetch("/api/auth/sign-in", {
+                method: "POST",
+                body: JSON.stringify({
+                    email: values.email,
+                    password: values.password,
+                }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
             })
-        })
+            if(data.ok){
+                const res = await data.json()
+                if(res.error){
+                    setError(res.error)
+                }
+                else{
+                    setSuccess(res.message)
+                }
+            }
+            else{
+                startTransition(() => {
+                    router.refresh()
+                })
+            }
+        } catch (err) {
+            console.error((err as { message: string }).message)
+        }
+        form.reset()
     }
     return (
         <div className="flex min-h-screen flex-col items-center justify-center p-24">

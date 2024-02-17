@@ -9,7 +9,7 @@ import { authConfig } from "../auth";
 const { auth } = NextAuth(authConfig);
 import { NextRequest, NextResponse } from "next/server";
 
-export default async function middleware(req: NextRequest) {
+export default async function middleware(req:NextRequest) {
     const { nextUrl } = req;
     const isLoggedIn = !auth()
     console.log("isLoggedIn", isLoggedIn)
