@@ -27,38 +27,38 @@ const RegisterForm = () => {
     const router = useRouter()
 
     const onSubmit = async (values: z.infer<typeof RegisterSchema>) => {
-        setError("")
-        setSuccess("")
-        try {
-            const data = await fetch("/api/auth/sign-up", {
-                method: "POST",
-                body: JSON.stringify({
-                    name: values.name,
-                    email: values.email,
-                    password: values.password,
-                }),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            if(data.ok){
-                const res = await data.json()
-                if(res.error){
-                    setError(res.error)
-                }
-                else{
-                    setSuccess(res.message)
-                }
-            }
-            else{
-                startTransition(() => {
-                    router.refresh()
-                })
-            }
-        } catch (err) {
-            console.error((err as { message: string }).message)
-        }
-        form.reset()
+        // setError("")
+        // setSuccess("")
+        // try {
+        //     const data = await fetch("/api/auth/sign-up", {
+        //         method: "POST",
+        //         body: JSON.stringify({
+        //             name: values.name,
+        //             email: values.email,
+        //             password: values.password,
+        //         }),
+        //         headers: {
+        //             "Content-Type": "application/json"
+        //         }
+        //     })
+        //     if(data.ok){
+        //         const res = await data.json()
+        //         if(res.error){
+        //             setError(res.error)
+        //         }
+        //         else{
+        //             setSuccess(res.message)
+        //         }
+        //     }
+        //     else{
+        //         startTransition(() => {
+        //             router.refresh()
+        //         })
+        //     }
+        // } catch (err) {
+        //     console.error((err as { message: string }).message)
+        // }
+        // form.reset()
     }
     return (
         <div className="flex min-h-screen flex-col items-center justify-center p-24">
